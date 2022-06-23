@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "readinesscluster1-91cb"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "readinesscluster1-91cb"
+  template:
+    metadata:
+      labels:
+        app: "readinesscluster1-91cb"
+    spec:
+      containers:
+        - name: "readinesscluster1-91cb"
+          image: "readinessregistry.azurecr.io/readinesscluster1"
+          ports:
+          - containerPort: 80
