@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "readinesscluster1-91cb"
+    labels:
+        app: "readinesscluster1-91cb"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: default-readinesscluster1-91cb.0b38c8662f1f48828100.eastasia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "readinesscluster1-91cb"
+                servicePort: 80
