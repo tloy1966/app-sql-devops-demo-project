@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tloyappsqldevopsdemoproject 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tloyappsqldevopsdemoproject
+  template:
+    metadata:
+      labels:
+        app: tloyappsqldevopsdemoproject 
+    spec:
+      containers:
+        - name: tloyappsqldevopsdemoproject 
+          image: readinessregistry.azurecr.io/tloyappsqldevopsdemoproject
+          ports:
+          - containerPort: 80
